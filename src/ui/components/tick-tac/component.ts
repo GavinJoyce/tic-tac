@@ -5,7 +5,7 @@ class Board {
 
   constructor() {
     this.cellValues = [
-      'X', 'O', undefined,
+      undefined, undefined, undefined,
       undefined, undefined, undefined,
       undefined, undefined, undefined
     ];
@@ -25,5 +25,9 @@ export default class TickTac extends Component {
     this.board.cellValues[index] = 'X';
 
     this.board = this.board;
+  }
+
+  newGame() {
+    this.board = new Board();
   }
 }
