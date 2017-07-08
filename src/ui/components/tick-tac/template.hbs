@@ -1,1 +1,16 @@
-<div><h1>Welcome to Glimmer!</h1></div>
+
+<header>
+  Glimmer.js Tic-Tac-Toe...
+</header>
+
+<div class="board">
+  {{#each board.cells key="@index" as |cell index|}}
+    <div class="cell">
+      {{#if cell}}
+        {{cell}}
+      {{else}}
+        -
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
