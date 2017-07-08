@@ -4,10 +4,10 @@
 </header>
 
 <div class="board">
-  {{#each board.cells key="@index" as |cell index|}}
-    <div class="cell">
-      {{#if cell}}
-        {{cell}}
+  {{#each board.cellValues key="@index" as |cellValue index|}}
+    <div class="cell" onclick={{action chooseCell index}}>
+      {{#if cellValue}}
+        {{cellValue}}
       {{else}}
         -
       {{/if}}

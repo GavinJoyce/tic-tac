@@ -1,10 +1,10 @@
 import Component, { tracked } from '@glimmer/component';
 
 class Board {
-  cells;
+  cellValues;
 
   constructor() {
-    this.cells = [
+    this.cellValues = [
       'X', 'O', undefined,
       undefined, undefined, undefined,
       undefined, undefined, undefined
@@ -19,5 +19,11 @@ export default class TickTac extends Component {
     super(options);
 
     this.board = new Board();
+  }
+
+  chooseCell(index) {
+    this.board.cellValues[index] = 'X';
+
+    this.board = this.board;
   }
 }

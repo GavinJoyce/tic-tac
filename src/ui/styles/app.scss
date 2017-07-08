@@ -24,3 +24,11 @@ header {
   height: 15vw;
   font-size: 4em;
 }
+
+.board .cell:hover {
+  background-color: lightblue;
+}
+
+.board .cell.win {
+  background-color: lightgreen;
+}
