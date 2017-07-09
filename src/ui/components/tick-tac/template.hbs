@@ -1,21 +1,17 @@
 
 <header>
-  Glimmer.js Tic-Tac-Toe...
+  Glimmer.js Tic-Tac-Toe
 </header>
 
 <div class="board">
   {{#each board.cellValues key="@index" as |cellValue index|}}
-    <div class="cell" onclick={{action chooseCell index}}>
-      {{#if cellValue}}
-        {{cellValue}}
-      {{else}}
-        -
-      {{/if}}
-    </div>
+    <game-cell
+      @value={{cellValue}}
+      @board={{board}}
+      @index={{index}}
+      @onClick={{action chooseCell}}
+    />
   {{/each}}
 </div>
 
 <button onclick={{action newGame}}>New Game</button>
-
-{{board.hasWin}}!
-{{board.winningLine}}

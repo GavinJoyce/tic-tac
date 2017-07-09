@@ -1,0 +1,7 @@
+<div class="cell {{if isWinning 'win'}}" onclick={{action @onClick @index}}>
+  {{#if @value}}
+    {{@value}}
+  {{else}}
+    -
+  {{/if}}
+</div>

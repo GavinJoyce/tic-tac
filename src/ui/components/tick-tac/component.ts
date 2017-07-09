@@ -39,7 +39,13 @@ class Board {
   }
 
   isCellIndexWinning(index) {
-    return this.winningLine.indexOf(index) > -1;
+    let winningLine = this.winningLine;
+
+    if(this.winningLine) {
+      return this.winningLine.indexOf(index) > -1;
+    } else {
+      return false;
+    }
   }
 }
 
