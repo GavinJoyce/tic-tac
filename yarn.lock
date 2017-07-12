@@ -84,6 +84,16 @@
     "@glimmer/runtime" "^0.25.1"
     "@glimmer/util" "^0.25.1"
 
+"@glimmer/component@glimmerjs/glimmer-component":
+  version "0.6.0"
+  resolved "https://codeload.github.com/glimmerjs/glimmer-component/tar.gz/2e789e9d946e9a548d61b80a968864aaa12ca40f"
+  dependencies:
+    "@glimmer/di" "^0.1.9"
+    "@glimmer/env" "^0.1.7"
+    "@glimmer/reference" "^0.26.2"
+    "@glimmer/runtime" "^0.26.2"
+    "@glimmer/util" "^0.26.2"
+
 "@glimmer/di@^0.1.9":
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.1.11.tgz#a6878c07a13a2c2c76fcde598a5c97637bfc4280"
@@ -108,12 +118,25 @@
   dependencies:
     "@glimmer/wire-format" "^0.25.1"
 
+"@glimmer/interfaces@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.26.2.tgz#f03e7309584006de164b82ff924692b210888e19"
+  dependencies:
+    "@glimmer/wire-format" "^0.26.2"
+
 "@glimmer/object-reference@^0.25.1":
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/@glimmer/object-reference/-/object-reference-0.25.1.tgz#6393deb8d24c6ead90437998eb988207d674142e"
   dependencies:
     "@glimmer/reference" "^0.25.1"
     "@glimmer/util" "^0.25.1"
+
+"@glimmer/object-reference@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/object-reference/-/object-reference-0.26.2.tgz#df3688d3a0003775042e66c06669b5b183503b36"
+  dependencies:
+    "@glimmer/reference" "^0.26.2"
+    "@glimmer/util" "^0.26.2"
 
 "@glimmer/object@^0.25.1":
   version "0.25.1"
@@ -122,11 +145,24 @@
     "@glimmer/object-reference" "^0.25.1"
     "@glimmer/util" "^0.25.1"
 
+"@glimmer/object@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/object/-/object-0.26.2.tgz#a6a99d88bc4acd5ce9f2e46a62b618b15e7d5bfa"
+  dependencies:
+    "@glimmer/object-reference" "^0.26.2"
+    "@glimmer/util" "^0.26.2"
+
 "@glimmer/reference@^0.25.1":
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/@glimmer/reference/-/reference-0.25.1.tgz#5c5a148a7e1f33c3ed425999b8b45d0f7a88aeac"
   dependencies:
     "@glimmer/util" "^0.25.1"
+
+"@glimmer/reference@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/reference/-/reference-0.26.2.tgz#b14ad1180559e51353519ee62f21aabad737b0cc"
+  dependencies:
+    "@glimmer/util" "^0.26.2"
 
 "@glimmer/resolution-map-builder@^0.5.1":
   version "0.5.1"
@@ -159,6 +195,17 @@
     "@glimmer/util" "^0.25.1"
     "@glimmer/wire-format" "^0.25.1"
 
+"@glimmer/runtime@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/runtime/-/runtime-0.26.2.tgz#2629259b619828bb058b8d9bc05a7c745ba53b05"
+  dependencies:
+    "@glimmer/interfaces" "^0.26.2"
+    "@glimmer/object" "^0.26.2"
+    "@glimmer/object-reference" "^0.26.2"
+    "@glimmer/reference" "^0.26.2"
+    "@glimmer/util" "^0.26.2"
+    "@glimmer/wire-format" "^0.26.2"
+
 "@glimmer/syntax@^0.25.1":
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.25.1.tgz#05bbc219af98adc447195d4d74bba6fb9f5fd3d5"
@@ -176,11 +223,21 @@
   version "0.25.2"
   resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.25.2.tgz#a79e7100f7c38181be026dddf2d3b4ce8a8c8421"
 
+"@glimmer/util@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.26.2.tgz#829e0cff7cee767689267f37533ea789da0bcc36"
+
 "@glimmer/wire-format@^0.25.1":
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.25.1.tgz#cd69f3595a08954fa68a3f1df4feafffa1c3f3de"
   dependencies:
     "@glimmer/util" "^0.25.1"
+
+"@glimmer/wire-format@^0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.26.2.tgz#5ff95a61c32c18bc65bd5b86af74bcbdd38e62d9"
+  dependencies:
+    "@glimmer/util" "^0.26.2"
 
 "@types/qunit@^2.0.31":
   version "2.0.31"
@@ -1624,15 +1681,11 @@ commander@2.8.x:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@2.9.0:
+commander@2.9.0, commander@^2.5.0, commander@^2.6.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
     graceful-readlink ">= 1.0.0"
-
-commander@^2.5.0, commander@^2.6.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
 commander@~2.1.0:
   version "2.1.0"
@@ -3658,17 +3711,13 @@ mime@^1.2.11:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimist@0.0.8:
+minimist@0.0.8, minimist@~0.0.1:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
-
-minimist@~0.0.1:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
 mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1:
   version "0.5.1"
@@ -4134,13 +4183,9 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-qs@6.4.0, qs@~6.4.0:
+qs@6.4.0, qs@^6.4.0, qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
-
-qs@^6.4.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.0.tgz#8d04954d364def3efc55b5a0793e1e2c8b1e6e49"
 
 quick-temp@^0.1.0, quick-temp@^0.1.2, quick-temp@^0.1.3, quick-temp@^0.1.5, quick-temp@^0.1.8:
   version "0.1.8"
@@ -4672,11 +4717,7 @@ spdx-license-ids@^1.0.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
 
-sprintf-js@^1.0.3:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.1.1.tgz#36be78320afe5801f6cea3ee78b6e5aab940ea0c"
-
-sprintf-js@~1.0.2:
+sprintf-js@^1.0.3, sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 

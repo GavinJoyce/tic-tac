@@ -24,6 +24,19 @@ class Board {
     ];
   }
 
+  makeMove(player, cellIndex) {
+    this.cellValues[cellIndex] = player;
+  }
+
+  get availableCellIndexes() {
+    return this.cellValues.reduce((array, element, index) => {
+      if(element === undefined) {
+        array.push(index);
+      }
+      return array;
+    }, []);
+  }
+
   get winningLine() {
     return WIN_LINES.find(line => {
       let first = this.cellValues[line[0]];
@@ -49,6 +62,24 @@ class Board {
   }
 }
 
+function sleep(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+class RandomPlayer {
+  async makeMove(board) {
+    await sleep(1000);
+
+    let availableCellIndexes = board.availableCellIndexes;
+    let randomIndex = Math.floor(Math.random() * availableCellIndexes.length);
+    let randomCellIndex = availableCellIndexes[randomIndex];
+
+    board.makeMove(PLAYER_O, randomCellIndex);
+
+    return board;
+  }
+}
+
 export default class TickTac extends Component {
   @tracked board;
 
@@ -58,10 +89,12 @@ export default class TickTac extends Component {
     this.board = new Board();
   }
 
-  chooseCell(index) {
-    this.board.cellValues[index] = PLAYER_X;
-
+  async chooseCell(index) {
+    this.board.makeMove(PLAYER_X, index);
     this.board = this.board;
+
+    let aiPlayer = new RandomPlayer();
+    this.board = await aiPlayer.makeMove(this.board);
   }
 
   newGame() {
