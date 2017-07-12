@@ -42,13 +42,32 @@ class Board {
       let first = this.cellValues[line[0]];
       let second = this.cellValues[line[1]];
       let third = this.cellValues[line[2]];
-      return first !== undefined && first === second &&
-             second === third;
+      return first !== undefined && first === second && second === third;
     });
   }
 
   get hasWin() {
     return this.winningLine !== undefined;
+  }
+
+  get winningPlayer() {
+    if(this.hasWin) {
+      return this.cellValues[this.winningLine[0]];
+    }
+  }
+
+  get nextPlayer() {
+    if(!this.hasWin) {
+      //X always goes first. if count(X) is even, it's X's turn
+      let xMovesCount = this.cellValues.filter(c => c == PLAYER_X).length;
+      let xPlaysNext = xMovesCount % 2 == 0;
+
+      if(xPlaysNext) {
+        return PLAYER_X;
+      } else {
+        return PLAYER_O;
+      }
+    }
   }
 
   isCellIndexWinning(index) {
@@ -90,11 +109,14 @@ export default class TickTac extends Component {
   }
 
   async chooseCell(index) {
-    this.board.makeMove(PLAYER_X, index);
-    this.board = this.board;
+    let board = this.board;
+    board.makeMove(PLAYER_X, index);
+    this.board = board;
 
-    let aiPlayer = new RandomPlayer();
-    this.board = await aiPlayer.makeMove(this.board);
+    if(!board.hasWin) {
+      let aiPlayer = new RandomPlayer();
+      this.board = await aiPlayer.makeMove(board);
+    }
   }
 
   newGame() {

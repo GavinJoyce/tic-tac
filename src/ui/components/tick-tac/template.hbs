@@ -3,6 +3,14 @@
   Glimmer.js Tic-Tac-Toe
 </header>
 
+<h1>
+  {{#if board.hasWin}}
+    {{board.winningPlayer}} is the WINNER
+  {{else}}
+    It's {{board.nextPlayer}}'s turn
+  {{/if}}
+</h1>
+
 <div class="board">
   {{#each board.cellValues key="@index" as |cellValue index|}}
     <game-cell
