@@ -14,6 +14,6 @@ app.registerInitializer({
   }
 });
 
-app.renderComponent('tick-tac', containerElement, null);
+app.renderComponent('TickTac', containerElement, null);
 
 app.boot();

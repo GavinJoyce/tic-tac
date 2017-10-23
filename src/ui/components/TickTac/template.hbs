@@ -13,7 +13,7 @@
 
 <div class="board">
   {{#each board.cellValues key="@index" as |cellValue index|}}
-    <game-cell
+    <GameCell
       @value={{cellValue}}
       @board={{board}}
       @index={{index}}
